@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>My Radio Player</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>🎧 My Radio</h1>
+<div class="controls-row">
+<input id="search" placeholder="Search stations..." />
+<div class="sleep">
+<input id="sleep-min" type="number" min="1" placeholder="Minutes (sleep)" />
+<button id="set-sleep">Set Sleep</button>
+<button id="cancel-sleep">Cancel</button>
+</div>
+</div>
+</header>
+
+
+<main>
+<section class="left">
+<div id="station-list" class="station-list"></div>
+</section>
+
+
+<section class="right">
+<div class="player-box">
+<audio id="player" controls crossorigin="anonymous"></audio>
+<div id="now" class="now">Not playing</div>
+<div id="timer">⏱ 00:00:00</div>
+
+
+<div class="extras">
+<button id="fav-filter">Show Favorites</button>
+<button id="reset-filter">Show All</button>
+</div>
+
+
+<hr>
+<details>
+<summary>Add a station (saved to your browser)</summary>
+<form id="add-form">
+<input id="add-name" placeholder="Station name" required />
+<input id="add-url" placeholder="Stream URL (http/https)" required />
+<input id="add-logo" placeholder="Optional logo URL" />
+<button type="submit">Add station</button>
+</form>
+</details>
+
+
+</div>
+</section>
+</main>
+
+
+<footer>
+<p>Tip: test streams locally with a simple HTTP server (e.g. <code>python -m http.server 8000</code>) — file:// won’t work for `fetch`.</p>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
